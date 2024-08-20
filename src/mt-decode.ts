@@ -16,6 +16,7 @@ const decoders = {
   [Protobuf.Portnums.PortNum.DETECTION_SENSOR_APP]: new TextDecoder(),
   [Protobuf.Portnums.PortNum.REPLY_APP]: new TextDecoder("ascii"),
   [Protobuf.Portnums.PortNum.IP_TUNNEL_APP]: null,
+  [Protobuf.Portnums.PortNum.PAXCOUNTER_APP]: new Protobuf.PaxCount.Paxcount(),
   [Protobuf.Portnums.PortNum.SERIAL_APP]: null,
   [Protobuf.Portnums.PortNum.STORE_FORWARD_APP]:
     new Protobuf.StoreForward.StoreAndForward(),
@@ -26,6 +27,9 @@ const decoders = {
   [Protobuf.Portnums.PortNum.TRACEROUTE_APP]: null,
   [Protobuf.Portnums.PortNum.NEIGHBORINFO_APP]:
     new Protobuf.Mesh.NeighborInfo(),
+  [Protobuf.Portnums.PortNum.MAP_REPORT_APP]: new Protobuf.Mqtt.MapReport(),
+  //[Protobuf.Portnums.PortNum.POWERSTRESS_APP]:
+  //  new Protobuf.PowerMon.PowerStressMessage(),
   [Protobuf.Portnums.PortNum.PRIVATE_APP]: null,
   [Protobuf.Portnums.PortNum.ATAK_FORWARDER]: null,
 };
@@ -104,7 +108,7 @@ const nodeInit: NodeInitializer = (red): void => {
     });
   }
 
-  red.nodes.registerType("decode", DecodeNodeConstructor);
+  red.nodes.registerType("mt-decode", DecodeNodeConstructor);
 };
 
 export default nodeInit;

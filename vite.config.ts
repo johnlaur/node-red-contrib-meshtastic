@@ -7,8 +7,8 @@ export default defineConfig({
     outDir: "./dist",
     lib: {
       entry: [
-        resolve(__dirname, "./src/decode.ts"),
-        resolve(__dirname, "./src/decrypt.ts"),
+        resolve(__dirname, "./src/mt-decode.ts"),
+        resolve(__dirname, "./src/mt-decrypt.ts"),
       ],
     },
     target: "esnext",

@@ -12,8 +12,8 @@
   "node-red": {
     "version": ">=3.0.0",
     "nodes": {
-      "decrypt": "./dist/decrypt.js",
-      "decode": "./dist/decode.js"
+      "mt-decrypt": "./dist/mt-decrypt.js",
+      "mt-decode": "./dist/mt-decode.js"
     }
   },
   "files": [
@@ -21,13 +21,13 @@
   ],
   "dependencies": {
     "@bufbuild/protobuf": "^1.7.2",
-    "@meshtastic/js": "2.2.23-0"
+    "@meshtastic/js": "file:../meshtastic-js"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.5.3",
-    "@buf/meshtastic_protobufs.bufbuild_es": "1.7.2-20240216123215-6b07c41c68c9.1",
+    "@buf/meshtastic_protobufs.bufbuild_es": "^1.10.0-20240817124710-a1b6e1d8e51a.1",
     "@types/node-red": "^1.3.4",
-    "node-red": "^3.1.5",
+    "node-red": "^4.0.2",
     "typescript": "^5.3.3",
     "vite": "^5.1.3"
   }
